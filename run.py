@@ -23,7 +23,7 @@ for file in [f for f in os.listdir('.') if os.path.isfile(f)]:
 if FileType == 'Latex':
     os.system('cmd /c "pdflatex "'+FileName)
     if not ("chrome.exe" in (i.name() for i in psutil.process_iter())):
-        os.startfile(FileName)
+        os.startfile(FileName[:-4] + '.pdf')
         time.sleep(0.1)
         os.startfile("refresh.vbs")
 
