@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{Homework 1 MTH5210}
+\begin{document}
+\maketitle
+\noindent 1. Let $Y_1, Y_2, Y_3, Y_4$ be i.i.d. $\mathcal{N}(0, 1)$ random variables.
+Let $X_1 = (Y_1 + Y_2)/\sqrt2$, $X_2  = (Y_1 + Y_2 + Y_3 +Y_4)/2$, and 
+$X_3 = (Y_1 - Y_2)/\sqrt2$. State with reason if the following is true. \\ \\
+(a) $X_1, X_2$ and $X_3$ are identically distributed $\mathcal{N}(0, 1)$ \\ \\
+This is true because $\mathcal{N}(\mu_X, \sigma_X^2) \pm \mathcal{N}(\mu_Y, \sigma_Y^2) \sim \mathcal{N}(\mu_X \pm \mu_Y, \sigma_X^2 +\sigma_Y^2)$ 
+\\\\
+(b) $(X_1, X_2, X_3)$ is a Gaussian vector \\\\
+Yes
+\\ \\
+(c) $X_1$ and $X_2$ are independent \\ \\
+\\ \\
+False
+(d) $X_1$ and $X_3$ are independent \\ \\
+True
+\\ \\ \\
+7. Let $B_t$ and $W_t$ be two independent Brownian. Show that $X_t = (B_t + W_t)/\sqrt2$ is also a Brownian motion.
+Find the covariance between $B_t$ and $X_t$
+\\
+For a process to be a brownian motion it must, be a continuous function of $t$, have normal increments and independent increments. \\ \\
+First it is clear that $X_t$ is a continuous function of $t$ as it is the sum of two continuous functions in $t$. It can also be shown that
+$X_t$ has normal increments for $t>s$
+\begin{equation*} 
+    X_t - X_s = (W_t + B_t)/\sqrt2 - (W_s + B_s)/\sqrt2 = (W_t - W_s + B_t - B_s)/\sqrt2 
+ \end{equation*} 
+Since $W_t$ and $B_t$ are independent brownian motions we have $X_t - X_s \sim \mathcal{N}(0, (t-s)) + \mathcal{N}(0, t-s))/\sqrt2 $ which then we find
+\begin{equation*} 
+   X_t - X_s \sim \frac{1}{\sqrt2} \mathcal{N}(0, 2(t-s)) \sim \mathcal{N}(0, t-s)
+ \end{equation*} 
+Then finally for independent increments, consider $X_{t+s} - X_t$ we must show
+that this is independent of $u\leq t$
+\begin{equation*} 
+    X_{t+s} - X_t = \frac{1}{\sqrt2} (W_{t+s} - W_t) + \frac{1}{\sqrt2}(B_{t+s} - B_t)   
+\end{equation*} 
+Both $W_{t+s} - W_t$ and $B_{t+s} - B_t$ are independent of $W_u$ and $B_u$ and since $W_t$ and $B_t$ are independent of each other 
+$ \frac{1}{\sqrt2} (W_{t+s} - W_t) + \frac{1}{\sqrt2}(B_{t+s} - B_t)$ is independent of $\frac{1}{\sqrt2} (W_u + B_u)$ for $u\leq t$
+hecne $X_t$ is independent of all $X_u$ for $u\leq t$
+\\Now calculating the covariance of $B_t$ and $X_t$
+\begin{equation*} 
+    cov(X_t, B_t) = \mathbb{E}[X_t B_t] - \mathbb{E}[X_t]\mathbb{E}[B_t] 
+\end{equation*}   
+Then using the definition of $X_t$
+\begin{equation*} 
+    cov(X_t, B_t) = \frac{1}{\sqrt2}\mathbb{E}[B_t^2 + B_t W_t]-\frac{1}{\sqrt2}\mathbb{E}[W_t+B_t]\mathbb{E}[B_t]    
+\end{equation*}
+By linearity of the expectation
+\begin{equation*} 
+        cov(X_t, B_t) = \frac{1}{\sqrt2} (\mathbb{E}[B_t^2]-\mathbb{E}[B_t]^2 +\mathbb{E}[B_tW_t] - \mathbb{E}[W_t]\mathbb{E}[B_t])
+\end{equation*} 
+Then finally we have
+\begin{equation*} 
+   cov(X_t, B_t) = \frac{1}{\sqrt2} (Var(B_t) + cov(W_t,B_t)) = \sqrt2 t 
+\end{equation*}
+
+\end{document}

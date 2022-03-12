@@ -42,5 +42,6 @@ if FileType == 'Latex':
 
         keyboard.release(Key.f5)
         time.sleep(0.1)
-        keyboard.press(Key.f11)
-        keyboard.release(Key.f11)
+        if 1 == 2:
+            keyboard.press(Key.f11)
+            keyboard.release(Key.f11)
