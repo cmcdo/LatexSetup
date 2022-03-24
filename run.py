@@ -15,8 +15,23 @@ for file in Files:
         FileName = file
         break
         
+FirstRun = False
+f = open('refresh.vbs','r')
+for line in f:
+    if 'First' in line:
+        FirstRun  = True
 
+f.close()
 os.system('cmd /c "pdflatex "'+FileName)
+
+if FirstRun:
+    f = open('refresh.vbs', 'w')
+    f.write('Set WshShell = WScript.CreateObject("WScript.Shell")'+"\n") 
+    f.write('WshShell.AppActivate("SumatraPDF")'+"\n")
+    f.write('WScript.Sleep(100)'+'\n')
+    f.write('WshShell.AppActivate("'+FileName[:-4]+'.tex'+'")')
+    f.close()
+
 if not ("SumatraPDF" in (i.name() for i in psutil.process_iter())):
     os.startfile(FileName[:-4] + '.pdf')
     time.sleep(0.1)
