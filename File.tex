@@ -1,24 +1,40 @@
 \documentclass{article}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{amsthm}
 \usepackage[a4paper, total={6in, 8in}]{geometry}
 \setlength\parindent{0pt}
-
-%ShortCuts
+\usepackage{biblatex}
+\addbibresource{ref.bib}
+%Shortcuts
+\newcommand{\mc}{\mathcal}
 \newcommand{\N}{\mathbb{N}}
+\newcommand{\Nd}{\mathcal{N}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\D}{\mathbb{D}}
 \newcommand{\Hp}{\mathbb{H}}
-\newcommand{\eps}{\epsilon}
+\newcommand{\Pe}{\mathbb{P}}
+\newcommand{\eps}{\varepsilon}
 \newcommand{\B}{\mathcal{B}}
 \newcommand{\F}{\mathcal{F}}
 \newcommand{\E}{\mathbb{E}}
+\newcommand{\Nc}{\mathcal{N}}
+\newcommand{\ds}{\\ \\}
+\newcommand{\ov}{\overline}
+\newcommand{\sech}{\text{sech}}
 %Environ
-\newtheorem{theorem}{Theorem}
-\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{definition}[theorem]{Definition}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{remark}{Remark}[section]
 
 \title{Title}
 \author{Clayton McDonald\\30637627}
